@@ -1,0 +1,52 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/oceanSpeedway.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="oceanSpeedwayStandOnPortal" class="orb" src="assets/img/assets/stand.png"
+                        (click)="standOnPortal('oceanSpeedwayStandOnPortal', $event)"
+                        (contextmenu)="standOnPortal('oceanSpeedwayStandOnPortal', $event)">
+                    <span>Stand On Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="oceanSpeedwayOOBEntrance" class="orb" src="assets/img/assets/oobEntrance.png"
+                        (click)="enterFromOOB('oceanSpeedwayOOBEntrance', $event)"
+                        (contextmenu)="enterFromOOB('oceanSpeedwayOOBEntrance', $event)">
+                    <span>Enter From OOB</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="sub110Ocean" class="orb" src="assets/img/assets/skillPoint.png"
+                        (click)="getSkillPoint('sub110Ocean', 0, $event)"
+                        (contextmenu)="getSkillPoint('sub110Ocean', 0, $event)">
+                    <span>Sub 1:10</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="followHunter" class="orb" src="assets/img/orb.png" (click)="completeFollowHunter($event)" (contextmenu)="completeFollowHunter($event)">
+                    <span>Follow Hunter</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

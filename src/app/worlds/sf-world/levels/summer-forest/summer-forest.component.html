@@ -1,0 +1,89 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/summerForest.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="swimMoneyBags" class="orb" src="assets/img/assets/moneyBags.png"
+                        (click)="payMoneybags('swimMoneyBags', 0, $event)"
+                        (contextmenu)="payMoneybags('swimMoneyBags', 0, $event)">
+                    <span>Buy Swim: 500 Gems</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="aquariaMoneyBags" class="orb" src="assets/img/assets/moneyBags.png"
+                        (click)="payMoneybags('aquariaMoneyBags', 1, $event)"
+                        (contextmenu)="payMoneybags('aquariaMoneyBags', 1, $event)">
+                    <span>Open Aquaria: 400 Gems</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="unlockOceanSpeedway" class="orb" src="assets/img/assets/elora.png"
+                        (click)="triggerSpecialEvent('unlockOceanSpeedway', 0, $event)"
+                        (contextmenu)="triggerSpecialEvent('unlockOceanSpeedway', 0, $event)">
+                    <span>Unlock Ocean Speedway (3 orbs)</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="sfZoe" class="orb" src="assets/img/assets/zoe.png" (click)="talkToZoe('sfZoe')"
+                        (contextmenu)="removeZoe($event, 'sfZoe')">
+                    {{zoes}}
+                    <span>Talk to Zoe</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="sfPinkGem" class="orb" src="assets/img/assets/pinkGem.png"
+                        (click)="collectPinkGem('sfPinkGem')" (contextmenu)="removePinkGem($event, 'sfPinkGem')">
+                    {{pinkGems}}
+                    <span>Collect Pink Gem</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="sfButterflyJars" class="orb" src="assets/img/assets/butterflyJar.png"
+                        (click)="breakButterflyJar('sfButterflyJars')"
+                        (contextmenu)="removeButterflyJar($event, 'sfButterflyJars')">
+                    {{butterflyJars}}
+                    <span>Break Butterfly Jars</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="huntersChallenge" class="orb" src="assets/img/orb.png"
+                        (click)="completeHuntersChallenge($event)" (contextmenu)="completeHuntersChallenge($event)">
+                    <span>Hunter's Challenge</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="atopALadder" class="orb" src="assets/img/orb.png" (click)="completeAtopALadder($event)"
+                        (contextmenu)="completeAtopALadder($event)">
+                    <span>Atop a Ladder</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="onASercretLedge" class="orb" src="assets/img/orb.png"
+                        (click)="completeOnASecretLedge($event)" (contextmenu)="completeOnASecretLedge($event)">
+                    <span>On a Secret Ledge</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="behindTheDoor" class="orb" src="assets/img/orb.png" (click)="completeBehindTheDoor($event)"
+                        (contextmenu)="completeBehindTheDoor($event)">
+                    <span>Behind the Door</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

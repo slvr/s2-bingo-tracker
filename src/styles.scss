@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; background-color: #424242; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+input, button {
+    border: none;
+    appearance: none;
+    background: #c9c9c9;
+    padding: 12px;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+
+  button:hover {
+    background-color: #a1a1a1;
+  }
+
+  input {
+    width: 30px;
+  }
+
+  .worldImg {
+    max-width: 20px;
+    max-height: 20px;
+}
+
+.orb {
+    max-width: 40px;
+    max-height: 40px;
+    opacity: 0.3;
+}
+
+.boss {
+  opacity: 0.3;
+}
+
+.not-opaque{
+    opacity: 1;
+}

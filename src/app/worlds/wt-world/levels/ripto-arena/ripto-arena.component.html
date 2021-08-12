@@ -1,0 +1,30 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/riptoArena.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="perfectRipto" class="orb" src="assets/img/assets/skillPoint.png"
+                        (click)="getSkillPoint('perfectRipto', 0, $event)"
+                        (contextmenu)="getSkillPoint('perfectRipto', 0, $event)">
+                    <span>Perfect Ripto</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="defeatRipto" class="boss" src="assets/img/assets/ripto.png"
+                        (click)="defeatBoss('defeatRipto', $event)" (contextmenu)="defeatBoss('defeatRipto', $event)">
+                        <span>Defeat Ripto</span>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

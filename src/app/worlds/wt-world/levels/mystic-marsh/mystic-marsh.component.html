@@ -1,0 +1,89 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/mysticMarsh.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="mysticMarshSpirits" class="orb" src="assets/img/assets/spirit.gif"
+                        (click)="completeSpirits('mysticMarshSpirits', $event)"
+                        (contextmenu)="completeSpirits('mysticMarshSpirits', $event)">
+                    <span>{{numEnemies}} Spirits</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="mysticMarshExitPortal" class="orb" src="assets/img/assets/portal.png"
+                        (click)="exitThroughPortal('mysticMarshExitPortal', $event)"
+                        (contextmenu)="exitThroughPortal('mysticMarshExitPortal', $event)">
+                    <span>Exit Portal</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="mysticMarshStandOnPortal" class="orb" src="assets/img/assets/stand.png"
+                        (click)="standOnPortal('mysticMarshStandOnPortal', $event)"
+                        (contextmenu)="standOnPortal('mysticMarshStandOnPortal', $event)">
+                    <span>Stand On Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="mysticMarshPowerup" class="orb" src="assets/img/assets/superbounce.png"
+                        (click)="usePowerup('mysticMarshPowerup', $event)"
+                        (contextmenu)="usePowerup('mysticMarshPowerup', $event)">
+                    <span *ngIf="powerup != null">{{powerup.type}}: {{powerup.limit}} enemies</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="mmFireworksBottle" class="orb" src="assets/img/assets/fireworksBottle.png"
+                        (click)="breakFireworksBottle('mmFireworksBottle')"
+                        (contextmenu)="removeFireworksBottle($event, 'mmFireworksBottle')">
+                    {{fireworksBottles}}
+                    <span>Break Fireworks Bottle</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="mmButterflyJars" class="orb" src="assets/img/assets/butterflyJar.png"
+                        (click)="breakButterflyJar('mmButterflyJars')"
+                        (contextmenu)="removeButterflyJar($event, 'mmButterflyJars')">
+                    {{butterflyJars}}
+                    <span>Break Butterfly Jars</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="fixTheFountain" class="orb" src="assets/img/orb.png"
+                        (click)="completeFixTheFountain($event)" (contextmenu)="completeFixTheFountain($event)">
+                    <span>Fix the Fountain</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="veryVersatileThieves" class="orb" src="assets/img/orb.png"
+                        (click)="completeVeryVersatileThieves($event)"
+                        (contextmenu)="completeVeryVersatileThieves($event)">
+                    <span>Very Versatile Thieves!</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="retrieveProfessorsPencil" class="orb" src="assets/img/orb.png"
+                        (click)="completeRetrieveProfessorsPencil($event)"
+                        (contextmenu)="completeRetrieveProfessorsPencil($event)">
+                    <span>Retrieve Professor's Pencil</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

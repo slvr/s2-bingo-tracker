@@ -1,0 +1,85 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/autumnPlains.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="climbMoneyBags" class="orb" src="assets/img/assets/moneyBags.png"
+                        (click)="payMoneybags('climbMoneyBags', 0, $event)"
+                        (contextmenu)="payMoneybags('climbMoneyBags', 0, $event)">
+                    <span>Buy Climb: 500 Gems</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="zephyrMoneyBags" class="orb" src="assets/img/assets/moneyBags.png"
+                        (click)="payMoneybags('zephyrMoneyBags', 1, $event)"
+                        (contextmenu)="payMoneybags('zephyrMoneyBags', 1, $event)">
+                    <span>Open Zephyr: 400 Gems</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="shadyMoneyBags" class="orb" src="assets/img/assets/moneyBags.png"
+                        (click)="payMoneybags('shadyMoneyBags', 2, $event)"
+                        (contextmenu)="payMoneybags('shadyMoneyBags', 2, $event)">
+                    <span>Open Shady: 400 Gems</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="icyMoneyBags" class="orb" src="assets/img/assets/moneyBags.png"
+                        (click)="payMoneybags('icyMoneyBags', 3, $event)"
+                        (contextmenu)="payMoneybags('icyMoneyBags', 3, $event)">
+                    <span>Open Icy: 200 Gems</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="unlockMetroSpeedway" class="orb" src="assets/img/assets/elora.png"
+                        (click)="triggerSpecialEvent('unlockMetroSpeedway', 0, $event)"
+                        (contextmenu)="triggerSpecialEvent('unlockMetroSpeedway', 0, $event)">
+                    <span>Unlock Metro Speedway (6 orbs)</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="apPinkGem" class="orb" src="assets/img/assets/pinkGem.png"
+                        (click)="collectPinkGem('apPinkGem')" (contextmenu)="removePinkGem($event, 'apPinkGem')">
+                    {{pinkGems}}
+                    <span>Collect Pink Gem</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="apButterflyJars" class="orb" src="assets/img/assets/butterflyJar.png"
+                        (click)="breakButterflyJar('apButterflyJars')"
+                        (contextmenu)="removeButterflyJar($event, 'apButterflyJars')">
+                    {{butterflyJars}}
+                    <span>Break Butterfly Jars</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="theEndOfTheWall" class="orb" src="assets/img/orb.png"
+                        (click)="completeTheEndOfTheWall($event)" (contextmenu)="completeTheEndOfTheWall($event)">
+                    <span>The End of the Wall</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="longGlide" class="orb" src="assets/img/orb.png" (click)="completeLongGlide($event)"
+                        (contextmenu)="completeLongGlide($event)">
+                    <span>Long Glide!</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

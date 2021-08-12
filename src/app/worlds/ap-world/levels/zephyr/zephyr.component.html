@@ -1,0 +1,115 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/zephyr.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="zephyrSpirits" class="orb" src="assets/img/assets/spirit.gif"
+                        (click)="completeSpirits('zephyrSpirits', $event)"
+                        (contextmenu)="completeSpirits('zephyrSpirits', $event)">
+                    <span>{{numEnemies}} Spirits</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="rubyBomb" class="orb" src="assets/img/talismans/zephyr.png"
+                        (click)="getTalisman('rubyBomb', $event)" (contextmenu)="getTalisman('rubyBomb', $event)">
+                    <span>Ruby Bomb</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="zephyrExitPortal" class="orb" src="assets/img/assets/portal.png"
+                        (click)="exitThroughPortal('zephyrExitPortal', $event)"
+                        (contextmenu)="exitThroughPortal('zephyrExitPortal', $event)">
+                    <span>Exit Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="plantAllSeeds" class="orb" src="assets/img/assets/seed.png"
+                        (click)="triggerSpecialEvent('plantAllSeeds', 0, $event)"
+                        (contextmenu)="triggerSpecialEvent('plantAllSeeds', 0, $event)">
+                    <span>Plant all seeds</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="zephyrStandOnPortal" class="orb" src="assets/img/assets/stand.png"
+                        (click)="standOnPortal('zephyrStandOnPortal', $event)"
+                        (contextmenu)="standOnPortal('zephyrStandOnPortal', $event)">
+                    <span>Stand On Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="zephyrPowerup" class="orb" src="assets/img/assets/superflame.png"
+                        (click)="usePowerup('zephyrPowerup', $event)"
+                        (contextmenu)="usePowerup('zephyrPowerup', $event)">
+                    <span *ngIf="powerup != null">{{powerup.type}}: {{powerup.limit}} enemies</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="zephyrMysteryJar" class="orb" src="assets/img/assets/mysteryJar.png"
+                        (click)="breakMysteryJar('zephyrMysteryJar', $event)"
+                        (contextmenu)="breakMysteryJar('zephyrMysteryJar', $event)">
+                    <span>Mystery Jar</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="zPinkGem" class="orb" src="assets/img/assets/pinkGem.png"
+                        (click)="collectPinkGem('zPinkGem')" (contextmenu)="removePinkGem($event, 'zPinkGem')">
+                    {{pinkGems}}
+                    <span>Collect Pink Gem</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="zStrongChest" class="orb" src="assets/img/assets/strongChest.png"
+                        (click)="breakStrongChest('zStrongChest')"
+                        (contextmenu)="removeStrongChest($event, 'zStrongChest')">
+                    {{strongChests}}
+                    <span>Break Strong Chest</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="zButterflyJars" class="orb" src="assets/img/assets/butterflyJar.png"
+                        (click)="breakButterflyJar('zButterflyJars')"
+                        (contextmenu)="removeButterflyJar($event, 'zButterflyJars')">
+                    {{butterflyJars}}
+                    <span>Break Butterfly Jars</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="cowlekCorral1" class="orb" src="assets/img/orb.png" (click)="completeCowlekCorral1($event)"
+                        (contextmenu)="completeCowlekCorral1($event)">
+                    <span>Cowlek Corral 1</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="cowlekCorral2" class="orb" src="assets/img/orb.png" (click)="completeCowlekCorral2($event)"
+                        (contextmenu)="completeCowlekCorral2($event)">
+                    <span>Cowlek Corral 2</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="sowingSeeds1" class="orb" src="assets/img/orb.png" (click)="completeSowingSeeds1($event)"
+                        (contextmenu)="completeSowingSeeds1($event)">
+                    <span>Sowing Seeds 1</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="sowingSeeds2" class="orb" src="assets/img/orb.png" (click)="completeSowingSeeds2($event)"
+                        (contextmenu)="completeSowingSeeds2($event)">
+                    <span>Sowing Seeds 2</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

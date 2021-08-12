@@ -1,0 +1,104 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/fractureHills.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="fractureHillsSpirits" class="orb" src="assets/img/assets/spirit.gif"
+                        (click)="completeSpirits('fractureHillsSpirits', $event)"
+                        (contextmenu)="completeSpirits('fractureHillsSpirits', $event)">
+                    <span>{{numEnemies}} Spirits</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="bronzeFlute" class="orb" src="assets/img/talismans/fractureHills.png"
+                        (click)="getTalisman('bronzeFlute', $event)" (contextmenu)="getTalisman('bronzeFlute', $event)">
+                    <span>Bronze Flute</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="fractureHillsExitPortal" class="orb" src="assets/img/assets/portal.png"
+                        (click)="exitThroughPortal('fractureHillsExitPortal', $event)"
+                        (contextmenu)="exitThroughPortal('fractureHillsExitPortal', $event)">
+                    <span>Exit Portal</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="fractureHillsStandOnPortal" class="orb" src="assets/img/assets/stand.png"
+                        (click)="standOnPortal('fractureHillsStandOnPortal', $event)"
+                        (contextmenu)="standOnPortal('fractureHillsStandOnPortal', $event)">
+                    <span>Stand On Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="fractureHillsPowerup" class="orb" src="assets/img/assets/supercharge.png"
+                        (click)="usePowerup('fractureHillsPowerup', $event)"
+                        (contextmenu)="usePowerup('fractureHillsPowerup', $event)">
+                    <span *ngIf="powerup != null">{{powerup.type}}: {{powerup.limit}} enemies</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="do3Laps" class="orb" src="assets/img/assets/skillPoint.png"
+                        (click)="getSkillPoint('do3Laps', 0, $event)"
+                        (contextmenu)="getSkillPoint('do3Laps', 0, $event)">
+                    <span>Do 3 Laps</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="fhPinkGem" class="orb" src="assets/img/assets/pinkGem.png"
+                        (click)="collectPinkGem('fhPinkGem')" (contextmenu)="removePinkGem($event, 'fhPinkGem')">
+                    {{pinkGems}}
+                    <span>Collect Pink Gem</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="fhStrongChest" class="orb" src="assets/img/assets/strongChest.png"
+                        (click)="breakStrongChest('fhStrongChest')"
+                        (contextmenu)="removeStrongChest($event, 'fhStrongChest')">
+                    {{strongChests}}
+                    <span>Break Strong Chest</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="fhButterflyJars" class="orb" src="assets/img/assets/butterflyJar.png"
+                        (click)="breakButterflyJar('fhButterflyJars')"
+                        (contextmenu)="removeButterflyJar($event, 'fhButterflyJars')">
+                    {{butterflyJars}}
+                    <span>Break Butterfly Jars</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="freeTheFaun" class="orb" src="assets/img/orb.png" (click)="completeFreeTheFaun($event)"
+                        (contextmenu)="completeFreeTheFaun($event)">
+                    <span>Free the Faun</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="alchemistEscort" class="orb" src="assets/img/orb.png"
+                        (click)="completeAlchemistEscort($event)" (contextmenu)="completeAlchemistEscort($event)">
+                    <span>Alchemist Escort</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="earthshaperBash" class="orb" src="assets/img/orb.png"
+                        (click)="completeEarthshaperBash($event)" (contextmenu)="completeEarthshaperBash($event)">
+                    <span>Earthshaper Bash</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

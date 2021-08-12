@@ -1,0 +1,30 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/crushDungeon.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="perfectCrush" class="orb" src="assets/img/assets/skillPoint.png"
+                        (click)="getSkillPoint('perfectCrush', 0, $event)"
+                        (contextmenu)="getSkillPoint('perfectCrush', 0, $event)">
+                    <span>Perfect Crush</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="defeatCrush" class="boss" src="assets/img/assets/crush.png"
+                        (click)="defeatBoss('defeatCrush', $event)" (contextmenu)="defeatBoss('defeatCrush', $event)">
+                    <span>Defeat Crush</span>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

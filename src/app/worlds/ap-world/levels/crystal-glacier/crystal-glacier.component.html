@@ -1,0 +1,98 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/crystalGlacier.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="crystalGlacierSpirits" class="orb" src="assets/img/assets/spirit.gif"
+                        (click)="completeSpirits('crystalGlacierSpirits', $event)"
+                        (contextmenu)="completeSpirits('crystalGlacierSpirits', $event)">
+                    <span>{{numEnemies}} Spirits</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="iceCrystal" class="orb" src="assets/img/talismans/crystalGlacier.png"
+                        (click)="getTalisman('iceCrystal', $event)" (contextmenu)="getTalisman('iceCrystal', $event)">
+                    <span>Ice Crystal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="crystalGlacierExitPortal" class="orb" src="assets/img/assets/portal.png"
+                        (click)="exitThroughPortal('crystalGlacierExitPortal', $event)"
+                        (contextmenu)="exitThroughPortal('crystalGlacierExitPortal', $event)">
+                    <span>Exit Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="crystalMoneyBags" class="orb" src="assets/img/assets/moneyBags.png"
+                        (click)="payMoneybags('crystalMoneyBags', 0, $event)"
+                        (contextmenu)="payMoneybags('crystalMoneyBags', 0, $event)">
+                    <span>Open Bridge: 200 Gems</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="crystalGlacierStandOnPortal" class="orb" src="assets/img/assets/stand.png"
+                        (click)="standOnPortal('crystalGlacierStandOnPortal', $event)"
+                        (contextmenu)="standOnPortal('crystalGlacierStandOnPortal', $event)">
+                    <span>Stand On Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="crystalGlacierPowerup" class="orb" src="assets/img/assets/superfly.png"
+                        (click)="usePowerup('crystalGlacierPowerup', $event)"
+                        (contextmenu)="usePowerup('crystalGlacierPowerup', $event)">
+                    <span *ngIf="powerup != null">{{powerup.type}}: {{powerup.limit}} enemies</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="cgPinkGem" class="orb" src="assets/img/assets/pinkGem.png"
+                        (click)="collectPinkGem('cgPinkGem')" (contextmenu)="removePinkGem($event, 'cgPinkGem')">
+                    {{pinkGems}}
+                    <span>Collect Pink Gem</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="cgFireworksBottle" class="orb" src="assets/img/assets/fireworksBottle.png"
+                        (click)="breakFireworksBottle('cgFireworksBottle')"
+                        (contextmenu)="removeFireworksBottle($event, 'cgFireworksBottle')">
+                    {{fireworksBottles}}
+                    <span>Break Fireworks Bottle</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="cgButterflyJars" class="orb" src="assets/img/assets/butterflyJar.png"
+                        (click)="breakButterflyJar('cgButterflyJars')"
+                        (contextmenu)="removeButterflyJar($event, 'cgButterflyJars')">
+                    {{butterflyJars}}
+                    <span>Break Butterfly Jars</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="dracletCave" class="orb" src="assets/img/orb.png" (click)="completeDracletCave($event)" (contextmenu)="completeDracletCave($event)">
+                    <span>Draclet Cave</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="georgeTheSnowLeopard" class="orb" src="assets/img/orb.png"
+                        (click)="completeGeorgeTheSnowLeopard($event)" (contextmenu)="completeGeorgeTheSnowLeopard($event)">
+                    <span>George the Snow Leopard</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

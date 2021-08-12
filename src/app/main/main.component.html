@@ -1,0 +1,221 @@
+<html>
+
+<body>
+
+    <div id="wrapper">
+        <div id="wrapped" class="click-to-top">
+            <input paceholder="Enter BingoSync URL" [(ngModel)]="url" style="width: 400px;">
+        </div>
+        <div id="wrapped" class="click-to-top">
+            <button (click)="loadTable(url)">Add</button>
+        </div>
+    </div>
+
+    <span *ngIf="slots.length !== 0">
+        <div class="board-container">
+            <table id="bingo" style="background-color: inherit">
+                <tbody>
+                    <tr>
+                        <td class="unselectable popout" id="tlbr">TL-BR</td>
+                        <td class="unselectable popout" id="col1">COL1</td>
+                        <td class="unselectable popout" id="col2">COL2</td>
+                        <td class="unselectable popout" id="col3">COL3</td>
+                        <td class="unselectable popout" id="col4">COL4</td>
+                        <td class="unselectable popout" id="col5">COL5</td>
+                    </tr>
+                    <tr>
+                        <td class="unselectable popout" id="row1">ROW1</td>
+                        <td class="unselectable square blanksquare row1 col1 tlbr" id="slot1" title="" (click)="colour('slot1')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[0].name}}
+                            </div>
+                        </td>
+                        <td class="unselectable square blanksquare row1 col2" id="slot2" title=""  (click)="colour('slot2')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[1].name}}
+                            </div>
+                        </td>
+                        <td class="unselectable square blanksquare row1 col3" id="slot3" title=""  (click)="colour('slot3')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[2].name}}</div>
+                        </td>
+                        <td class="unselectable square blanksquare row1 col4" id="slot4" title=""  (click)="colour('slot4')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[3].name}}</div>
+                        </td>
+                        <td class="unselectable square blanksquare row1 col5 bltr" id="slot5" title=""  (click)="colour('slot5')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[4].name}}</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="unselectable popout" id="row2">ROW2</td>
+                        <td class="unselectable square blanksquare row2 col1" id="slot6" title="" (click)="colour('slot6')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[5].name}}
+                            </div>
+                        </td>
+                        <td class="unselectable square blanksquare row2 col2 tlbr" id="slot7" title="" (click)="colour('slot7')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[6].name}}
+                            </div>
+                        </td>
+                        <td class="unselectable square blanksquare row2 col3" id="slot8" title="" (click)="colour('slot8')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[7].name}}
+                            </div>
+                        </td>
+                        <td class="unselectable square blanksquare row2 col4 bltr" id="slot9" title="" (click)="colour('slot9')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[8].name}}
+                            </div>
+                        </td>
+                        <td class="unselectable square blanksquare row2 col5" id="slot10" title="" (click)="colour('slot10')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[9].name}}</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="unselectable popout" id="row3">ROW3</td>
+                        <td class="unselectable square blanksquare row3 col1" id="slot11" title="" (click)="colour('slot11')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[10].name}}
+                            </div>
+                        </td>
+                        <td class="unselectable square blanksquare row3 col2" id="slot12" title="" (click)="colour('slot12')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[11].name}}
+                            </div>
+                        </td>
+                        <td class="unselectable square blanksquare row3 col3 tlbr bltr" id="slot13" title="" (click)="colour('slot13')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[12].name}}
+                            </div>
+                        </td>
+                        <td class="unselectable square blanksquare row3 col4" id="slot14" title="" (click)="colour('slot14')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[13].name}}
+                            </div>
+                        </td>
+                        <td class="unselectable square blanksquare row3 col5" id="slot15" title="" (click)="colour('slot15')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[14].name}}
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="unselectable popout" id="row4">ROW4</td>
+                        <td class="unselectable square blanksquare row4 col1" id="slot16" title="" (click)="colour('slot16')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[15].name}}
+                            </div>
+                        </td>
+                        <td class="unselectable square blanksquare row4 col2 bltr" id="slot17" title="" (click)="colour('slot17')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[16].name}}
+                            </div>
+                        </td>
+                        <td class="unselectable square blanksquare row4 col3" id="slot18" title="" (click)="colour('slot18')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[17].name}}
+                            </div>
+                        </td>
+                        <td class="unselectable square blanksquare row4 col4 tlbr" id="slot19" title="" (click)="colour('slot19')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[18].name}}
+                            </div>
+                        </td>
+                        <td class="unselectable square blanksquare row4 col5" id="slot20" title="" (click)="colour('slot20')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[19].name}}
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="unselectable popout" id="row5">ROW5</td>
+                        <td class="unselectable square blanksquare row5 col1 bltr" id="slot21" title="" (click)="colour('slot21')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[20].name}}
+                            </div>
+                        </td>
+                        <td class="unselectable square blanksquare row5 col2" id="slot22" title="" (click)="colour('slot22')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 90%;">{{slots[21].name}}</div>
+                        </td>
+                        <td class="unselectable square blanksquare row5 col3" id="slot23" title="" (click)="colour('slot23')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[22].name}}
+                            </div>
+                        </td>
+                        <td class="unselectable square blanksquare row5 col4" id="slot24" title="" (click)="colour('slot24')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[23].name}}
+                            </div>
+                        </td>
+                        <td class="unselectable square blanksquare row5 col5 tlbr" id="slot25" title="" (click)="colour('slot25')">
+                            <div class="starred hidden"></div>
+                            <div class="shadow"></div>
+                            <div class="vertical-center text-container" style="font-size: 100%;">{{slots[24].name}}
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="unselectable popout" id="bltr">BL-TR</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </span>
+
+    <button mat-button type="button"(click)="popup = true">
+        <mat-icon>info</mat-icon>
+       </button>
+       
+       
+       <div class="overlay" *ngIf="popup">
+           <div class="popup">
+               <h2>Improvements to bring:</h2>
+               <a class="close" (click)="popup = false">&times;</a>
+               <div class="content" style="color: black;">
+                <ul>
+                    <li>Make it pretty (requires opinions)</li>
+                    <li>Make uncollected tali image the empty slot from atlas</li>
+                    <li>Standardize image size in navigators</li>
+                    <li>Create good images for assets</li>
+                    <li>Order assets logically (requires opinions)</li>
+                    <li>Add notes to level overviews (requires opinions)</li>
+                    <li>Make cards hidden when first imported (or at least add the option for it)</li>
+                    <li>Add other colours for completed goals</li>
+                  </ul> 
+               </div>
+           </div>
+       </div>
+
+</body>
+
+</html>

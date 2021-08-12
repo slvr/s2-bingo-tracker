@@ -1,0 +1,47 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/icySpeedway.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="icySpeedwayStandOnPortal" class="orb" src="assets/img/assets/stand.png"
+                        (click)="standOnPortal('icySpeedwayStandOnPortal', $event)"
+                        (contextmenu)="standOnPortal('icySpeedwayStandOnPortal', $event)">
+                    <span>Stand On Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="sub115Icy" class="orb" src="assets/img/assets/skillPoint.png"
+                        (click)="getSkillPoint('sub115Icy', 0, $event)"
+                        (contextmenu)="getSkillPoint('sub115Icy', 0, $event)">
+                    <span>Sub 1:15</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="parasailThroughRings" class="orb" src="assets/img/orb.png"
+                        (click)="completeParasailThroughRings($event)" (contextmenu)="completeParasailThroughRings($event)">
+                    <span>Parasail Through Rings</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

@@ -1,0 +1,98 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/hurricos.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="hurricosSpirits" class="orb" src="assets/img/assets/spirit.gif"
+                        (click)="completeSpirits('hurricosSpirits', $event)"
+                        (contextmenu)="completeSpirits('hurricosSpirits', $event)">
+                    <span>{{numEnemies}} Spirits</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="gearOfPower" class="orb" src="assets/img/talismans/hurricos.png"
+                        (click)="getTalisman('gearOfPower', $event)" (contextmenu)="getTalisman('gearOfPower', $event)">
+                    <span>Gear of Power</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="hurricosExitPortal" class="orb" src="assets/img/assets/portal.png"
+                        (click)="exitThroughPortal('hurricosExitPortal', $event)"
+                        (contextmenu)="exitThroughPortal('hurricosExitPortal', $event)">
+                    <span>Exit Portal</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="hurricosStandOnPortal" class="orb" src="assets/img/assets/stand.png"
+                        (click)="standOnPortal('hurricosStandOnPortal', $event)"
+                        (contextmenu)="standOnPortal('hurricosStandOnPortal', $event)">
+                    <span>Stand On Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="hurricosPowerup" class="orb" src="assets/img/assets/supercharge.png"
+                        (click)="usePowerup('hurricosPowerup', $event)"
+                        (contextmenu)="usePowerup('hurricosPowerup', $event)">
+                    <span *ngIf="powerup != null">{{powerup.type}}: {{powerup.limit}} enemies</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="breakAllWindmills" class="orb" src="assets/img/assets/skillPoint.png"
+                        (click)="getSkillPoint('breakAllWindmills', 0, $event)"
+                        (contextmenu)="getSkillPoint('breakAllWindmills', 0, $event)">
+                    <span>Break All Windmills</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="hStrongChest" class="orb" src="assets/img/assets/strongChest.png"
+                        (click)="breakStrongChest('hStrongChest')"
+                        (contextmenu)="removeStrongChest($event, 'hStrongChest')">
+                    {{strongChests}}
+                    <span>Break Strong Chest</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="hButterflyJars" class="orb" src="assets/img/assets/butterflyJar.png"
+                        (click)="breakButterflyJar('hButterflyJars')"
+                        (contextmenu)="removeButterflyJar($event, 'hButterflyJars')">
+                    {{butterflyJars}}
+                    <span>Break Butterfly Jars</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="stoneThiefChase" class="orb" src="assets/img/orb.png"
+                        (click)="completeStoneThiefChase($event)" (contextmenu)="completeStoneThiefChase($event)">
+                    <span>Stone Thief Chase</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="factoryGlide1" class="orb" src="assets/img/orb.png" (click)="completeFactoryGlide1($event)"
+                        (contextmenu)="completeFactoryGlide1($event)">
+                    <span>Factory Glide 1</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="factoryGlide2" class="orb" src="assets/img/orb.png" (click)="completeFactoryGlide2($event)"
+                        (contextmenu)="completeFactoryGlide2($event)">
+                    <span>Factory Glide 2</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

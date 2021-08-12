@@ -1,0 +1,111 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/aquariaTowers.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="aquariaTowersSpirits" class="orb" src="assets/img/assets/spirit.gif"
+                        (click)="completeSpirits('aquariaTowersSpirits', $event)"
+                        (contextmenu)="completeSpirits('aquariaTowersSpirits', $event)">
+                    <span>{{numEnemies}} Spirits</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="enchantedShell" class="orb" src="assets/img/talismans/aquariaTowers.png"
+                        (click)="getTalisman('enchantedShell', $event)"
+                        (contextmenu)="getTalisman('enchantedShell', $event)">
+                    <span>Enchanted Shell</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="aquariaTowersExitPortal" class="orb" src="assets/img/assets/portal.png"
+                        (click)="exitThroughPortal('aquariaTowersExitPortal', $event)"
+                        (contextmenu)="exitThroughPortal('aquariaTowersExitPortal', $event)">
+                    <span>Exit Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="submarineMoneyBags" class="orb" src="assets/img/assets/moneyBags.png"
+                        (click)="payMoneybags('submarineMoneyBags', 0, $event)"
+                        (contextmenu)="payMoneybags('submarineMoneyBags', 0, $event)">
+                    <span>Buy Sub: 100 Gems</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="aquariaTowersStandOnPortal" class="orb" src="assets/img/assets/stand.png"
+                        (click)="standOnPortal('aquariaTowersStandOnPortal', $event)"
+                        (contextmenu)="standOnPortal('aquariaTowersStandOnPortal', $event)">
+                    <span>Stand On Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="aquariaTowersPowerup" class="orb" src="assets/img/assets/superflame.png"
+                        (click)="usePowerup('aquariaTowersPowerup', $event)"
+                        (contextmenu)="usePowerup('aquariaTowersPowerup', $event)">
+                    <span *ngIf="powerup != null">{{powerup.type}}: {{powerup.limit}} enemies</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="destroyAllSeaweed" class="orb" src="assets/img/assets/skillPoint.png"
+                        (click)="getSkillPoint('destroyAllSeaweed', 0, $event)"
+                        (contextmenu)="getSkillPoint('destroyAllSeaweed', 0, $event)">
+                    <span>Destroy All Seaweed</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="atPinkGem" class="orb" src="assets/img/assets/pinkGem.png"
+                        (click)="collectPinkGem('atPinkGem')" (contextmenu)="removePinkGem($event, 'atPinkGem')">
+                    {{pinkGems}}
+                    <span>Collect Pink Gem</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="atStrongChest" class="orb" src="assets/img/assets/strongChest.png"
+                        (click)="breakStrongChest('atStrongChest')"
+                        (contextmenu)="removeStrongChest($event, 'atStrongChest')">
+                    {{strongChests}}
+                    <span>Break Strong Chest</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="atButterflyJars" class="orb" src="assets/img/assets/butterflyJar.png"
+                        (click)="breakButterflyJar('atButterflyJars')"
+                        (contextmenu)="removeButterflyJar($event, 'atButterflyJars')">
+                    {{butterflyJars}}
+                    <span>Break Butterfly Jars</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="seahorseRescue" class="orb" src="assets/img/orb.png"
+                        (click)="completeSeahorseRescue($event)" (contextmenu)="completeSeahorseRescue($event)">
+                    <span>Seahorse Rescue</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="mantaRide1" class="orb" src="assets/img/orb.png" (click)="completeMantaRide1($event)"
+                        (contextmenu)="completeMantaRide1($event)">
+                    <span>Manta Ride 1</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="mantaRide2" class="orb" src="assets/img/orb.png" (click)="completeMantaRide2($event)"
+                        (contextmenu)="completeMantaRide2($event)">
+                    <span>Manta Ride 2</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

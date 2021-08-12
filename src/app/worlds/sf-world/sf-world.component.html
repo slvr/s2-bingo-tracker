@@ -1,0 +1,80 @@
+<div>
+
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+        <mat-panel-title>
+          <img class="logo" src="assets/img/levelLogo/summerForestWorld.png">
+        </mat-panel-title>
+        <mat-panel-description>
+          <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}} / {{maxOrbs}}
+          <img class="worldImg" src="assets/img/gem.png"> {{totalGems}} / {{maxGems}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-summer-forest (addOrbs)="onAddOrbs($event)" (addGems)="onAddGems($event)"
+        (addMoneyBags)="onAddMoneyBags($event)" (addPinkGem)="onAddPinkGem($event)"
+        (addPortalStoodOn)="onStandOnPortal($event)" (addPowerup)="onAddPowerup($event)"
+        (addStrongChest)="onAddStrongChest($event)" (addMysteryJar)="onAddMysteryJar($event)"
+        (addSkillPoint)="onAddSkillPoint($event)" (addFireworksBottle)="onAddFireworksBottle($event)"
+        (addRocket)="onAddRocket($event)" (addHeadbashChest)="onAddHeadbashChest($event)"
+        (addSpecialEvent)="onAddSpecialEvent($event)" (addEnteredOOB)="onAddEnteredOOB($event)"
+        (addButterflyJar)="onAddButterflyJar($event)" (addZoe)="onAddZoe($event)"></app-summer-forest>
+      <app-glimmer (addOrbs)="onAddOrbs($event)" (addGems)="onAddGems($event)" (addSpirits)="onAddSpirits($event)"
+        (addTalisman)="onAddTalisman($event)" (addExit)="onAddExit($event)" (addMoneyBags)="onAddMoneyBags($event)"
+        (addPinkGem)="onAddPinkGem($event)" (addPortalStoodOn)="onStandOnPortal($event)"
+        (addPowerup)="onAddPowerup($event)" (addStrongChest)="onAddStrongChest($event)"
+        (addMysteryJar)="onAddMysteryJar($event)" (addSkillPoint)="onAddSkillPoint($event)"
+        (addFireworksBottle)="onAddFireworksBottle($event)" (addRocket)="onAddRocket($event)"
+        (addHeadbashChest)="onAddHeadbashChest($event)" (addSpecialEvent)="onAddSpecialEvent($event)"
+        (addEnteredOOB)="onAddEnteredOOB($event)" (addButterflyJar)="onAddButterflyJar($event)"
+        (addZoe)="onAddZoe($event)">
+      </app-glimmer>
+      <app-idol-springs (addOrbs)="onAddOrbs($event)" (addGems)="onAddGems($event)" (addSpirits)="onAddSpirits($event)"
+        (addTalisman)="onAddTalisman($event)" (addExit)="onAddExit($event)" (addPinkGem)="onAddPinkGem($event)"
+        (addPortalStoodOn)="onStandOnPortal($event)" (addPowerup)="onAddPowerup($event)"
+        (addStrongChest)="onAddStrongChest($event)" (addMysteryJar)="onAddMysteryJar($event)"
+        (addSkillPoint)="onAddSkillPoint($event)" (addFireworksBottle)="onAddFireworksBottle($event)"
+        (addRocket)="onAddRocket($event)" (addHeadbashChest)="onAddHeadbashChest($event)"
+        (addSpecialEvent)="onAddSpecialEvent($event)" (addEnteredOOB)="onAddEnteredOOB($event)"
+        (addButterflyJar)="onAddButterflyJar($event)" (addZoe)="onAddZoe($event)"></app-idol-springs>
+      <app-colossus (addOrbs)="onAddOrbs($event)" (addGems)="onAddGems($event)" (addSpirits)="onAddSpirits($event)"
+        (addTalisman)="onAddTalisman($event)" (addExit)="onAddExit($event)" (addPinkGem)="onAddPinkGem($event)"
+        (addPortalStoodOn)="onStandOnPortal($event)" (addPowerup)="onAddPowerup($event)"
+        (addStrongChest)="onAddStrongChest($event)" (addMysteryJar)="onAddMysteryJar($event)"
+        (addSkillPoint)="onAddSkillPoint($event)" (addFireworksBottle)="onAddFireworksBottle($event)"
+        (addRocket)="onAddRocket($event)" (addHeadbashChest)="onAddHeadbashChest($event)"
+        (addSpecialEvent)="onAddSpecialEvent($event)" (addEnteredOOB)="onAddEnteredOOB($event)"
+        (addButterflyJar)="onAddButterflyJar($event)" (addZoe)="onAddZoe($event)"></app-colossus>
+      <app-hurricos (addOrbs)="onAddOrbs($event)" (addGems)="onAddGems($event)" (addSpirits)="onAddSpirits($event)"
+        (addTalisman)="onAddTalisman($event)" (addExit)="onAddExit($event)" (addPinkGem)="onAddPinkGem($event)"
+        (addPortalStoodOn)="onStandOnPortal($event)" (addPowerup)="onAddPowerup($event)"
+        (addStrongChest)="onAddStrongChest($event)" (addMysteryJar)="onAddMysteryJar($event)"
+        (addSkillPoint)="onAddSkillPoint($event)" (addFireworksBottle)="onAddFireworksBottle($event)"
+        (addRocket)="onAddRocket($event)" (addHeadbashChest)="onAddHeadbashChest($event)"
+        (addSpecialEvent)="onAddSpecialEvent($event)" (addEnteredOOB)="onAddEnteredOOB($event)"
+        (addButterflyJar)="onAddButterflyJar($event)"></app-hurricos>
+      <app-sunny-beach (addOrbs)="onAddOrbs($event)" (addGems)="onAddGems($event)" (addSpirits)="onAddSpirits($event)"
+        (addTalisman)="onAddTalisman($event)" (addExit)="onAddExit($event)" (addPinkGem)="onAddPinkGem($event)"
+        (addPortalStoodOn)="onStandOnPortal($event)" (addPowerup)="onAddPowerup($event)"
+        (addStrongChest)="onAddStrongChest($event)" (addMysteryJar)="onAddMysteryJar($event)"
+        (addSkillPoint)="onAddSkillPoint($event)" (addFireworksBottle)="onAddFireworksBottle($event)"
+        (addRocket)="onAddRocket($event)" (addHeadbashChest)="onAddHeadbashChest($event)"
+        (addSpecialEvent)="onAddSpecialEvent($event)" (addEnteredOOB)="onAddEnteredOOB($event)"
+        (addButterflyJar)="onAddButterflyJar($event)"></app-sunny-beach>
+      <app-aquaria-towers (addOrbs)="onAddOrbs($event)" (addGems)="onAddGems($event)"
+        (addSpirits)="onAddSpirits($event)" (addTalisman)="onAddTalisman($event)" (addExit)="onAddExit($event)"
+        (addMoneyBags)="onAddMoneyBags($event)" (addPinkGem)="onAddPinkGem($event)"
+        (addPortalStoodOn)="onStandOnPortal($event)" (addPowerup)="onAddPowerup($event)"
+        (addStrongChest)="onAddStrongChest($event)" (addMysteryJar)="onAddMysteryJar($event)"
+        (addSkillPoint)="onAddSkillPoint($event)" (addFireworksBottle)="onAddFireworksBottle($event)"
+        (addRocket)="onAddRocket($event)" (addHeadbashChest)="onAddHeadbashChest($event)"
+        (addSpecialEvent)="onAddSpecialEvent($event)" (addEnteredOOB)="onAddEnteredOOB($event)"
+        (addButterflyJar)="onAddButterflyJar($event)"></app-aquaria-towers>
+      <app-ocean-speedway (addOrbs)="onAddOrbs($event)" (addGems)="onAddGems($event)"
+        (addPortalStoodOn)="onStandOnPortal($event)" (addSkillPoint)="onAddSkillPoint($event)"
+        (addEnteredOOB)="onAddEnteredOOB($event)"></app-ocean-speedway>
+      <app-crush-dungeon (addSkillPoint)="onAddSkillPoint($event)"></app-crush-dungeon>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+</div>

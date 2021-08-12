@@ -1,0 +1,117 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/colossus.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="colossusSpirits" class="orb" src="assets/img/assets/spirit.gif"
+                        (click)="completeSpirits('colossusSpirits', $event)"
+                        (contextmenu)="completeSpirits('colossusSpirits', $event)">
+                    <span>{{numEnemies}} Spirits</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="goldenStatue" class="orb" src="assets/img/talismans/colossus.png"
+                        (click)="getTalisman('goldenStatue', $event)"
+                        (contextmenu)="getTalisman('goldenStatue', $event)">
+                    <span>Golden Statue</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="colossusExitPortal" class="orb" src="assets/img/assets/portal.png"
+                        (click)="exitThroughPortal('colossusExitPortal', $event)"
+                        (contextmenu)="exitThroughPortal('colossusExitPortal', $event)">
+                    <span>Exit Portal</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="colossusStandOnPortal" class="orb" src="assets/img/assets/stand.png"
+                        (click)="standOnPortal('colossusStandOnPortal', $event)"
+                        (contextmenu)="standOnPortal('colossusStandOnPortal', $event)">
+                    <span>Stand On Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="colossusPowerup" class="orb" src="assets/img/assets/superbounce.png"
+                        (click)="usePowerup('colossusPowerup', $event)"
+                        (contextmenu)="usePowerup('colossusPowerup', $event)">
+                    <span *ngIf="powerup != null">{{powerup.type}}: {{powerup.limit}} enemies</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="colossusRocket" class="orb" src="assets/img/assets/rocket.png"
+                        (click)="igniteRocket('colossusRocket', $event)"
+                        (contextMenu)="igniteRocket('colossusRocket', $event)">
+                    <span>Rocket</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="perfectHockey" class="orb" src="assets/img/assets/skillPoint.png"
+                        (click)="getSkillPoint('perfectHockey', 0, $event)"
+                        (contextmenu)="getSkillPoint('perfectHockey', 0, $event)">
+                    <span>Perfect Hockey</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="talkToBrotherCurtis" class="orb" src="assets/img/assets/curtis.png"
+                        (click)="triggerSpecialEvent('talkToBrotherCurtis', 0, $event)"
+                        (contextmenu)="triggerSpecialEvent('talkToBrotherCurtis', 0, $event)">
+                    <span>Talk to Brother Curtis</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="cZoe" class="orb" src="assets/img/assets/zoe.png" (click)="talkToZoe('cZoe')"
+                        (contextmenu)="removeZoe($event, 'cZoe')">
+                    {{zoes}}
+                    <span>Talk to Zoe</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="cStrongChest" class="orb" src="assets/img/assets/strongChest.png"
+                        (click)="breakStrongChest('cStrongChest')"
+                        (contextmenu)="removeStrongChest($event, 'cStrongChest')">
+                    {{strongChests}}
+                    <span>Break Strong Chest</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="cButterflyJars" class="orb" src="assets/img/assets/butterflyJar.png"
+                        (click)="breakButterflyJar('cButterflyJars')"
+                        (contextmenu)="removeButterflyJar($event, 'cButterflyJars')">
+                    {{butterflyJars}}
+                    <span>Break Butterfly Jars</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="hockeyVsGoalie" class="orb" src="assets/img/orb.png"
+                        (click)="completeHockeyVsGoalie($event)" (contextmenu)="completeHockeyVsGoalie($event)">
+                    <span>Hockey vs. Goalie</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="hockeyOneOnOne" class="orb" src="assets/img/orb.png"
+                        (click)="completeHockeyOneOnOne($event)" (contextmenu)="completeHockeyOneOnOne($event)">
+                    <span>Hockey One on One</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="evilSpiritSearch" class="orb" src="assets/img/orb.png"
+                        (click)="completeEvilSpiritSearch($event)" (contextmenu)="completeEvilSpiritSearch($event)">
+                    <span>Evil Spirit Search</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

@@ -1,0 +1,93 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/roboticaFarms.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="roboticaFarmsSpirits" class="orb" src="assets/img/assets/spirit.gif"
+                        (click)="completeSpirits('roboticaFarmsSpirits', $event)"
+                        (contextmenu)="exitThroughPortal('roboticaFarmsExitPortal', $event)">
+                    <span>{{numEnemies}} Spirits</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="roboticaFarmsExitPortal" class="orb" src="assets/img/assets/portal.png"
+                        (click)="exitThroughPortal('roboticaFarmsExitPortal', $event)"
+                        (contextmenu)="exitThroughPortal('roboticaFarmsExitPortal', $event)">
+                    <span>Exit Portal</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="roboticaFarmsStandOnPortal" class="orb" src="assets/img/assets/stand.png"
+                        (click)="standOnPortal('roboticaFarmsStandOnPortal', $event)"
+                        (contextmenu)="standOnPortal('roboticaFarmsStandOnPortal', $event)">
+                    <span>Stand On Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="roboticaFarmsPowerup" class="orb" src="assets/img/assets/supercharge.png"
+                        (click)="usePowerup('roboticaFarmsPowerup', $event)"
+                        (contextmenu)="usePowerup('roboticaFarmsPowerup', $event)">
+                    <span *ngIf="powerup != null">{{powerup.type}}: {{powerup.limit}} enemies</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="roboticaFarmsMysteryJar" class="orb" src="assets/img/assets/mysteryJar.png"
+                        (click)="breakMysteryJar('roboticaFarmsMysteryJar', $event)"
+                        (contextmenu)="breakMysteryJar('roboticaFarmsMysteryJar', $event)">
+                    <span>Mystery Jar</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="roboticaFarmsRocket" class="orb" src="assets/img/assets/rocket.png"
+                        (click)="igniteRocket('roboticaFarmsRocket', $event)"
+                        (contextmenu)="igniteRocket('roboticaFarmsRocket', $event)">
+                    <span>Rocket</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="rfStrongChest" class="orb" src="assets/img/assets/strongChest.png"
+                        (click)="breakStrongChest('rfStrongChest')"
+                        (contextmenu)="removeStrongChest($event, 'rfStrongChest')">
+                    {{strongChests}}
+                    <span>Break Strong Chest</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="switchOnBugLight" class="orb" src="assets/img/orb.png"
+                        (click)="completeSwitchOnBugLight($event)" (contextmenu)="completeSwitchOnBugLight($event)">
+                    <span>Switch On Bug Light</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="clearTractorPath" class="orb" src="assets/img/orb.png"
+                        (click)="completeClearTractorPath($event)" (contextmenu)="completeClearTractorPath($event)">
+                    <span>Clear Tractor Path</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="exterminateCrowBugs" class="orb" src="assets/img/orb.png"
+                        (click)="completeExterminateCrowBugs($event)"
+                        (contextmenu)="completeExterminateCrowBugs($event)">
+                    <span>Exterminate Crow Bugs</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

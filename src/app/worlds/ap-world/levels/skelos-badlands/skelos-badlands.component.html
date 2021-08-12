@@ -1,0 +1,135 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/skelosBadlands.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="skelosBadlandsSpirits" class="orb" src="assets/img/assets/spirit.gif"
+                        (click)="completeSpirits('skelosBadlandsSpirits', $event)"
+                        (contextmenu)="completeSpirits('skelosBadlandsSpirits', $event)">
+                    <span>{{numEnemies}} Spirits</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="ancientBone" class="orb" src="assets/img/talismans/skelosBadlands.png"
+                        (click)="getTalisman('ancientBone', $event)" (contextmenu)="getTalisman('ancientBone', $event)">
+                    <span>Ancient Bone</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="skelosBadlandsExitPortal" class="orb" src="assets/img/assets/portal.png"
+                        (click)="exitThroughPortal('skelosBadlandsExitPortal', $event)"
+                        (contextmenu)="exitThroughPortal('skelosBadlandsExitPortal', $event)">
+                    <span>Exit Portal</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="skelosBadlandsStandOnPortal" class="orb" src="assets/img/assets/stand.png"
+                        (click)="standOnPortal('skelosBadlandsStandOnPortal', $event)"
+                        (contextmenu)="standOnPortal('skelosBadlandsStandOnPortal', $event)">
+                    <span>Stand On Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="skelosBadlandsPowerup" class="orb" src="assets/img/assets/invincibility.png"
+                        (click)="usePowerup('skelosBadlandsPowerup', $event)"
+                        (contextmenu)="usePowerup('skelosBadlandsPowerup', $event)">
+                    <span *ngIf="powerup != null">{{powerup.type}}: {{powerup.limit}} enemies</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="skelosBadlandsMysteryJar" class="orb" src="assets/img/assets/mysteryJar.png"
+                        (click)="breakMysteryJar('skelosBadlandsMysteryJar', $event)"
+                        (contextmenu)="breakMysteryJar('skelosBadlandsMysteryJar', $event)">
+                    <span>Mystery Jar</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="skelosBadlandsRocket" class="orb" src="assets/img/assets/rocket.png"
+                        (click)="igniteRocket('skelosBadlandsRocket', $event)"
+                        (contextmenu)="igniteRocket('skelosBadlandsRocket', $event)">
+                    <span>Rocket</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="catbatQuartet" class="orb" src="assets/img/assets/skillPoint.png"
+                        (click)="getSkillPoint('catbatQuartet', 0, $event)"
+                        (contextmenu)="getSkillPoint('catbatQuartet', 0, $event)">
+                    <span>Catbat Quartet</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="allCacti" class="orb" src="assets/img/assets/skillPoint.png"
+                        (click)="getSkillPoint('allCacti', 1, $event)"
+                        (contextmenu)="getSkillPoint('allCacti', 1, $event)">
+                    <span>All Cacti</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="standOnSkulls" class="orb" src="assets/img/assets/skulls.png"
+                        (click)="triggerSpecialEvent('standOnSkulls', 0, $event)"
+                        (contextmenu)="triggerSpecialEvent('standOnSkulls', 0, $event)">
+                    <span>Stand on Both Skulls</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="sbPinkGem" class="orb" src="assets/img/assets/pinkGem.png"
+                        (click)="collectPinkGem('sbPinkGem')" (contextmenu)="removePinkGem($event, 'sbPinkGem')">
+                    {{pinkGems}}
+                    <span>Collect Pink Gem</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="sbStrongChest" class="orb" src="assets/img/assets/strongChest.png"
+                        (click)="breakStrongChest('sbStrongChest')"
+                        (contextmenu)="removeStrongChest($event, 'sbStrongChest')">
+                    {{strongChests}}
+                    <span>Break Strong Chest</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="sbFireworksBottle" class="orb" src="assets/img/assets/fireworksBottle.png"
+                        (click)="breakFireworksBottle('sbFireworksBottle')"
+                        (contextmenu)="removeFireworksBottle($event, 'sbFireworksBottle')">
+                    {{fireworksBottles}}
+                    <span>Break Fireworks Bottle</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="sbButterflyJars" class="orb" src="assets/img/assets/butterflyJar.png"
+                        (click)="breakButterflyJar('sbButterflyJars')"
+                        (contextmenu)="removeButterflyJar($event, 'sbButterflyJars')">
+                    {{butterflyJars}}
+                    <span>Break Butterfly Jars</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="lavaLizards1" class="orb" src="assets/img/orb.png" (click)="completeLavaLizards1($event)"
+                        (contextmenu)="completeLavaLizards1($event)">
+                    <span>Lava Lizards 1</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="lavaLizards2" class="orb" src="assets/img/orb.png" (click)="completeLavaLizards2($event)"
+                        (contextmenu)="completeLavaLizards2($event)">
+                    <span>Lava Lizards 2</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="demBones" class="orb" src="assets/img/orb.png" (click)="completeDemBones($event)"
+                        (contextmenu)="completeDemBones($event)">
+                    <span>Dem Bones</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

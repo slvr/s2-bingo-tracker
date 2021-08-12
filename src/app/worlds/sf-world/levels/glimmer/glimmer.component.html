@@ -1,0 +1,90 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/glimmer.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="glimmerSpirits" class="orb" src="assets/img/assets/spirit.gif"
+                        (click)="completeSpirits('glimmerSpirits', $event)"
+                        (contextmenu)="completeSpirits('glimmerSpirits', $event)">
+                    <span>{{numEnemies}} Spirits</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="magicPick" class="orb" src="assets/img/talismans/glimmer.png"
+                        (click)="getTalisman('magicPick', $event)" (contextmenu)="getTalisman('magicPick', $event)">
+                    <span>Magic Pick</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="glimmerExitPortal" class="orb" src="assets/img/assets/portal.png"
+                        (click)="exitThroughPortal('glimmerExitPortal', $event)"
+                        (contextmenu)="exitThroughPortal('glimmerExitPortal', $event)">
+                    <span>Exit Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="glimmerMoneyBags" class="orb" src="assets/img/assets/moneyBags.png"
+                        (click)="payMoneybags('glimmerMoneyBags', 0, $event)"
+                        (contextmenu)="payMoneybags('glimmerMoneyBags', 0, $event)">
+                    <span>Open Bridge: 100 Gems</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="glimmerStandOnPortal" class="orb" src="assets/img/assets/stand.png"
+                        (click)="standOnPortal('glimmerStandOnPortal', $event)"
+                        (contextmenu)="standOnPortal('glimmerStandOnPortal', $event)">
+                    <span>Stand On Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="glimmerPowerup" class="orb" src="assets/img/assets/superfly.png"
+                        (click)="usePowerup('glimmerPowerup', $event)"
+                        (contextmenu)="usePowerup('glimmerPowerup', $event)">
+                    <span *ngIf="powerup != null">{{powerup.type}}: {{powerup.limit}} enemies</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="gZoe" class="orb" src="assets/img/assets/zoe.png" (click)="talkToZoe('gZoe')"
+                        (contextmenu)="removeZoe($event, 'gZoe')">
+                    {{zoes}}
+                    <span>Talk to Zoe</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="lizardHunt" class="orb" src="assets/img/orb.png" (click)="completeLizardHunt($event)"
+                        (contextmenu)="completeLizardHunt($event)">
+                    <span>Lizard Hunt</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="gemLampFightOutdoors" class="orb" src="assets/img/orb.png"
+                        (click)="completeOutdoorLamps($event)" (contextmenu)="completeOutdoorLamps($event)">
+                    <span>Gem Lamp Fight Outdoors</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="gemLampFightIndoors" class="orb" src="assets/img/orb.png"
+                        (click)="completeIndoorLamps($event)" (contextmenu)="completeIndoorLamps($event)">
+                    <span>Gem Lamp Fight Indoors</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

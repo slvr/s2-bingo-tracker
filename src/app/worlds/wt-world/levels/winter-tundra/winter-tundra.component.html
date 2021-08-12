@@ -1,0 +1,72 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/winterTundra.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="headbashMoneyBags" class="orb" src="assets/img/assets/moneyBags.png"
+                        (click)="payMoneybags('headbashMoneyBags', 0, $event)"
+                        (contextmenu)="payMoneybags('headbashMoneyBags', 0, $event)">
+                    <span>Buy Headbash: 1000 Gems</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="canyonMoneyBags" class="orb" src="assets/img/assets/moneyBags.png"
+                        (click)="payMoneybags('canyonMoneyBags', 1, $event)"
+                        (contextmenu)="payMoneybags('canyonMoneyBags', 1, $event)">
+                    <span>Open Canyon: 200 Gems</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="unlockCloudTemples" class="orb" src="assets/img/assets/professor.png"
+                        (click)="triggerSpecialEvent('unlockCloudTemples', 0, $event)"
+                        (contextmenu)="triggerSpecialEvent('unlockCloudTemples', 0, $event)">
+                    <span>Unlock Cloud Temples (15 orbs)</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="wtHeadbashChest" class="orb" src="assets/img/assets/headbashChest.png"
+                        (click)="breakHeadbashChest('wtHeadbashChest')"
+                        (contextmenu)="removeHeadbashChest($event, 'wtHeadbashChest')">
+                    {{headbashChest}}
+                    <span>Break Headbash Chest</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="topOfTheWaterfall" class="orb" src="assets/img/orb.png"
+                        (click)="completeTopOfTheWaterfall($event)" (contextmenu)="completeTopOfTheWaterfall($event)">
+                    <span>Top of the Waterfall</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="onTheTallWall" class="orb" src="assets/img/orb.png" (click)="completeOnTheTallWall($event)"
+                        (contextmenu)="completeOnTheTallWall($event)">
+                    <span>On the Tall Wall</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="smashTheRock" class="orb" src="assets/img/orb.png" (click)="completeSmashTheRock($event)"
+                        (contextmenu)="completeSmashTheRock($event)">
+                    <span>Smash the Rock</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

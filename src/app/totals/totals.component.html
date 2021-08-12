@@ -1,0 +1,42 @@
+<div class="box">
+    <div class="viewport1">
+        <div style="color: #c7c4c2;">
+            <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}} / {{maxOrbs}}
+            <img class="worldImg" src="assets/img/gem.png"> {{totalGems}} / {{maxGems}}
+            <img class="worldImg" src="assets/img/talismans/glimmer.png"> {{talismansAcquired}}
+        </div>
+        <div style="color: #c7c4c2;">
+            <img class="worldImg" src="assets/img/assets/spirit.gif"> {{levelsWithAllSpirits}}
+            <img class="worldImg" src="assets/img/assets/portal.png"> {{exitPortals}}
+            <img class="worldImg" src="assets/img/assets/moneyBags.png"> {{moneybagsPaid}}
+            <img class="worldImg" src="assets/img/assets/mysteryJar.png"> {{numMysteryJars}}
+            <img class="worldImg" src="assets/img/assets/skillPoint.png"> {{numSkillPoints}}
+            <img class="worldImg" src="assets/img/assets/oobEntrance.png"> {{numPortalsEnteredOOB}}
+            <img class="worldImg" src="assets/img/assets/stand.png"> {{numPortalsStoodOn}}
+        </div>
+        <div style="color: #c7c4c2;">
+            <img class="worldImg" src="assets/img/assets/pinkGem.png"> {{numPinkGems}}
+            <img class="worldImg" src="assets/img/assets/strongChest.png"> {{numStrongChests}}
+            <img class="worldImg" src="assets/img/assets/fireworksBottle.png"> {{numFireworksBottles}}
+            <img class="worldImg" src="assets/img/assets/headbashChest.png"> {{numHeadbashChests}}
+            <img class="worldImg" src="assets/img/assets/butterflyJar.png"> {{numButterflyJars}}
+            <img class="worldImg" src="assets/img/assets/rocket.png"> {{numRockets}}
+            <img class="worldImg" src="assets/img/assets/zoe.png"> {{numZoes}}
+        </div>
+    </div>
+
+    <div class="container">
+        <cdk-virtual-scroll-viewport itemSize="200" class="viewport2">
+            <app-sidebar (addOrbs)="onAddOrbs($event)" (addGems)="onAddGems($event)" (addSpirits)="onAddSpirits($event)"
+                (addTalisman)="onAddTalisman($event)" (addExit)="onAddExit($event)"
+                (addMoneyBags)="onAddMoneyBags($event)" (addPinkGem)="onAddPinkGems($event)"
+                (addPortalStoodOn)="onStandOnPortal($event)" (addPowerup)="onAddPowerup($event)"
+                (addStrongChest)="onAddStrongChest($event)" (addMysteryJar)="onAddMysteryJar($event)"
+                (addSkillPoint)="onAddSkillPoint($event)" (addFireworksBottle)="onAddFireworksBottle($event)"
+                (addRocket)="onAddRocket($event)" (addHeadbashChest)="onAddHeadbashChest($event)"
+                (addSpecialEvent)="onAddSpecialEvent($event)" (addEnteredOOB)="onAddEnteredOOB($event)"
+                (addButterflyJar)="onAddButterflyJar($event)" (addZoe)="onAddZoe($event)">
+            </app-sidebar>
+        </cdk-virtual-scroll-viewport>
+    </div>
+</div>

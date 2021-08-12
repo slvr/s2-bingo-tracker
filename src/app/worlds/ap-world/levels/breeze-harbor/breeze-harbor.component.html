@@ -1,0 +1,87 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/breezeHarbor.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="breezeHarborSpirits" class="orb" src="assets/img/assets/spirit.gif"
+                        (click)="completeSpirits('breezeHarborSpirits', $event)"
+                        (contextmenu)="completeSpirits('breezeHarborSpirits', $event)">
+                    <span>{{numEnemies}} Spirits</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="glassAnchor" class="orb" src="assets/img/talismans/breezeHarbor.png"
+                        (click)="getTalisman('glassAnchor', $event)" (contextmenu)="getTalisman('glassAnchor', $event)">
+                    <span>Glass Anchor</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="breezeHarborExitPortal" class="orb" src="assets/img/assets/portal.png"
+                        (click)="exitThroughPortal('breezeHarborExitPortal', $event)"
+                        (contextmenu)="exitThroughPortal('breezeHarborExitPortal', $event)">
+                    <span>Exit Portal</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="breezeHarborStandOnPortal" class="orb" src="assets/img/assets/stand.png"
+                        (click)="standOnPortal('breezeHarborStandOnPortal', $event)"
+                        (contextmenu)="standOnPortal('breezeHarborStandOnPortal', $event)">
+                    <span>Stand On Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="breezeHarborPowerup" class="orb" src="assets/img/assets/superbounce.png"
+                        (click)="usePowerup('breezeHarborPowerup', $event)"
+                        (contextmenu)="usePowerup('breezeHarborPowerup', $event)">
+                    <span *ngIf="powerup != null">{{powerup.type}}: {{powerup.limit}} enemies</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="bhStrongChest" class="orb" src="assets/img/assets/strongChest.png"
+                        (click)="breakStrongChest('bhStrongChest')"
+                        (contextmenu)="removeStrongChest($event, 'bhStrongChest')">
+                    {{strongChests}}
+                    <span>Break Strong Chest</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="bhButterflyJars" class="orb" src="assets/img/assets/butterflyJar.png"
+                        (click)="breakButterflyJar('bhButterflyJars')"
+                        (contextmenu)="removeButterflyJar($event, 'bhButterflyJars')">
+                    {{butterflyJars}}
+                    <span>Break Butterfly Jars</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="mineBlast" class="orb" src="assets/img/orb.png" (click)="completeMineBlast($event)"
+                        (contextmenu)="completeMineBlast($event)">
+                    <span>Mine Blast</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="gearGrab" class="orb" src="assets/img/orb.png" (click)="completeGearGrab($event)"
+                        (contextmenu)="completeGearGrab($event)">
+                    <span>Gear Grab</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

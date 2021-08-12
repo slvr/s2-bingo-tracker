@@ -1,0 +1,108 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/metropolis.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="metropolisSpirits" class="orb" src="assets/img/assets/spirit.gif"
+                        (click)="completeSpirits('metropolisSpirits', $event)"
+                        (contextmenu)="completeSpirits('metropolisSpirits', $event)">
+                    <span>{{numEnemies}} Spirits</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="metropolisExitPortal" class="orb" src="assets/img/assets/portal.png"
+                        (click)="exitThroughPortal('metropolisExitPortal', $event)"
+                        (contextmenu)="exitThroughPortal('metropolisExitPortal', $event)">
+                    <span>Exit Portal</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="metropolisStandOnPortal" class="orb" src="assets/img/assets/stand.png"
+                        (click)="standOnPortal('metropolisStandOnPortal', $event)"
+                        (contextmenu)="standOnPortal('metropolisStandOnPortal', $event)">
+                    <span>Stand On Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="metropolisPowerup" class="orb" src="assets/img/assets/dual.png"
+                        (click)="usePowerup('metropolisPowerup', $event)"
+                        (contextmenu)="usePowerup('metropolisPowerup', $event)">
+                    <span *ngIf="powerup != null">{{powerup.type}}: {{powerup.limit}} enemies</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="metropolisOOBEntrance" class="orb" src="assets/img/assets/oobEntrance.png"
+                        (click)="enterFromOOB('metropolisOOBEntrance', $event)"
+                        (contextmenu)="enterFromOOB('metropolisOOBEntrance', $event)">
+                    <span>Enter From OOB</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="mHeadbashChest" class="orb" src="assets/img/assets/headbashChest.png"
+                        (click)="breakHeadbashChest('mHeadbashChest')"
+                        (contextmenu)="removeHeadbashChest($event, 'mHeadbashChest')">
+                    {{headbashChest}}
+                    <span>Break Headbash Chest</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="mStrongChest" class="orb" src="assets/img/assets/strongChest.png"
+                        (click)="breakStrongChest('mStrongChest')"
+                        (contextmenu)="removeStrongChest($event, 'mStrongChest')">
+                    {{strongChests}}
+                    <span>Break Strong Chest</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="mFireworksBottle" class="orb" src="assets/img/assets/fireworksBottle.png"
+                        (click)="breakFireworksBottle('mFireworksBottle')"
+                        (contextmenu)="removeFireworksBottle($event, 'mFireworksBottle')">
+                    {{fireworksBottles}}
+                    <span>Break Fireworks Bottle</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="conquerInvadingCows" class="orb" src="assets/img/orb.png"
+                        (click)="completeConquerInvadingCows($event)"
+                        (contextmenu)="completeConquerInvadingCows($event)">
+                    <span>Conquer Invading Cows</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="shootDownSheepSaucers1" class="orb" src="assets/img/orb.png"
+                        (click)="completeShootDownSheepSaucers1($event)"
+                        (contextmenu)="completeShootDownSheepSaucers1($event)">
+                    <span>Shoot Down Sheep Saucers 1</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="shootDownSheepSaucers2" class="orb" src="assets/img/orb.png"
+                        (click)="completeShootDownSheepSaucers2($event)"
+                        (contextmenu)="completeShootDownSheepSaucers2($event)">
+                    <span>Shoot Down Sheep Saucers 2</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="oxBombing" class="orb" src="assets/img/orb.png" (click)="completeOxBombing($event)"
+                        (contextmenu)="completeOxBombing($event)">
+                    <span>Ox Bombing</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

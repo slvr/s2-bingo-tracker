@@ -1,0 +1,113 @@
+<div>
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header collapsedHeight="90px" expandedHeight="90px">
+                <mat-panel-title>
+                    <img class="logo" src="assets/img/levelLogo/cloudTemples.png">
+                </mat-panel-title>
+                <mat-panel-description>
+                    <img class="worldImg" src="assets/img/orb.png"> {{totalOrbs}}
+                    <img class="worldImg" src="assets/img/gem.png"> {{totalGems}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="cloudTemplesSpirits" class="orb" src="assets/img/assets/spirit.gif"
+                        (click)="completeSpirits('cloudTemplesSpirits', $event)"
+                        (contextmenu)="completeSpirits('cloudTemplesSpirits', $event)">
+                    <span>{{numEnemies}} Spirits</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="cloudTemplesExitPortal" class="orb" src="assets/img/assets/portal.png"
+                        (click)="exitThroughPortal('cloudTemplesExitPortal', $event)"
+                        (contextmenu)="exitThroughPortal('cloudTemplesExitPortal', $event)">
+                    <span>Exit Portal</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="cloudTemplesStandOnPortal" class="orb" src="assets/img/assets/stand.png"
+                        (click)="standOnPortal('cloudTemplesStandOnPortal', $event)"
+                        (contextmenu)="standOnPortal('cloudTemplesStandOnPortal', $event)">
+                    <span>Stand On Portal</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="cloudTemplesPowerup" class="orb" src="assets/img/assets/superfreeze.png"
+                        (click)="usePowerup('cloudTemplesPowerup', $event)"
+                        (contextmenu)="usePowerup('cloudTemplesPowerup', $event)">
+                    <span *ngIf="powerup != null">{{powerup.type}}: {{powerup.limit}} enemies</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="cloudTemplesRocket" class="orb" src="assets/img/assets/rocket.png"
+                        (click)="igniteRocket('cloudTemplesRocket', $event)"
+                        (contextMenu)="igniteRocket('cloudTemplesRocket', $event)">
+                    <span>Rocket</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="cloudTemplesOOBEntrance" class="orb" src="assets/img/assets/oobEntrance.png"
+                        (click)="enterFromOOB('cloudTemplesOOBEntrance', $event)"
+                        (contextmenu)="enterFromOOB('cloudTemplesOOBEntrance', $event)">
+                    <span>Enter From OOB</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="ctPinkGem" class="orb" src="assets/img/assets/pinkGem.png"
+                        (click)="collectPinkGem('ctPinkGem')" (contextmenu)="removePinkGem($event, 'ctPinkGem')">
+                    {{pinkGems}}
+                    <span>Collect Pink Gem</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="ctHeadbashChest" class="orb" src="assets/img/assets/headbashChest.png"
+                        (click)="breakHeadbashChest('ctHeadbashChest')"
+                        (contextmenu)="removeHeadbashChest($event, 'ctHeadbashChest')">
+                    {{headbashChest}}
+                    <span>Break Headbash Chest</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="ctStrongChest" class="orb" src="assets/img/assets/strongChest.png"
+                        (click)="breakStrongChest('ctStrongChest')"
+                        (contextmenu)="removeStrongChest($event, 'ctStrongChest')">
+                    {{strongChests}}
+                    <span>Break Strong Chest</span>
+                </div>
+                <div id="wrapped" class="click-to-top" style="padding-right: 20px;">
+                    <img id="ctButterflyJars" class="orb" src="assets/img/assets/butterflyJar.png"
+                        (click)="breakButterflyJar('ctButterflyJars')"
+                        (contextmenu)="removeButterflyJar($event, 'ctButterflyJars')">
+                    {{butterflyJars}}
+                    <span>Break Butterfly Jars</span>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="wrapped" class="click-to-top">
+                    <img id="breakDownDoors" class="orb" src="assets/img/orb.png"
+                        (click)="completeBreakDownDoors($event)" (contextmenu)="completeBreakDownDoors($event)">
+                    <span>Break Down Doors</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="agentZerosSecretHideout" class="orb" src="assets/img/orb.png"
+                        (click)="completeAgentZerosSecretHideout($event)"
+                        (contextmenu)="completeAgentZerosSecretHideout($event)">
+                    <span>Agent Zero's Secret Hideout</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img id="ringTowerBells" class="orb" src="assets/img/orb.png"
+                        (click)="completeRingTowerBells($event)" (contextmenu)="completeRingTowerBells($event)">
+                    <span>Ring Tower Bells</span>
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <img class="orb not-opaque" src="assets/img/gem.png">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <input paceholder="Add gems" [(ngModel)]="addedGems">
+                </div>
+                <div id="wrapped" class="click-to-top">
+                    <button (click)="collectGems(addedGems)">Add</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>
